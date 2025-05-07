@@ -153,6 +153,7 @@ namespace ScryfallClient
         public async Task<Card> GetCardByScryfallIdAsync(CardByIdRequest request)
             => await executeRequestAsync<Card>(request);
 
+
         private async Task<T> executeRequestAsync<T>(IRequest request)
         {
             var response = request.Method switch
