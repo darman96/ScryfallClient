@@ -1,0 +1,4 @@
+﻿<Solution>
+  <Project Path="ScryfallClient.Tests\ScryfallClient.Tests.csproj" Type="Classic C#" />
+  <Project Path="ScryfallClient\ScryfallClient.csproj" Type="Classic C#" />
+</Solution>
