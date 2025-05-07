@@ -3,7 +3,7 @@ using System;
 namespace ScryfallClient.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
-    internal class QueryParameterAttribute : System.Attribute
+    internal class QueryParameterAttribute : Attribute
     {
         public string Name { get; set; }
         public string[] DependsOn { get; set; }

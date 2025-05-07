@@ -12,12 +12,12 @@ namespace ScryfallClient.Models
         /// <summary>
         /// A computer-friendly string representing the appropriate HTTP status code.
         /// </summary>
-        public string Code { get; set; }
+        public string Code { get; set; } = null!;
 
         /// <summary>
         /// A human-readable string explaining the error.
         /// </summary>
-        public string Details { get; set; }
+        public string Details { get; set; } = null!;
 
         /// <summary>
         /// A computer-friendly string that provides additional context for the main error.
