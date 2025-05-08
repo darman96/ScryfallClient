@@ -153,6 +153,146 @@ namespace ScryfallClient
         public async Task<Card> GetCardByScryfallIdAsync(CardByIdRequest request)
             => await executeRequestAsync<Card>(request);
 
+        /// <summary>
+        /// Returns a list of all nontoken English card names in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetCardNamesCatalogAsync(CatalogCardNamesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a list of all canonical artist names in Scryfall’s database.
+        /// This catalog won’t include duplicate, misspelled, or funny names for artists.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetArtistNamesCatalogAsync(CatalogArtistNamesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all English words, of length 2 or more, that could appear in a card name.
+        /// Values are drawn from cards currently in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetWordBankCatalogAsync(CatalogWordBankRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Magic card supertypes.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetSupertypesCatalogAsync(CatalogSupertypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Magic card types.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetCardTypesCatalogAsync(CatalogCardTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all artifact types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetArtifactTypesCatalogAsync(CatalogArtifactTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Battle types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetBattleTypesCatalogAsync(CatalogBattleTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all creature types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetCreatureTypesCatalogAsync(CatalogCreatureTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all enchantment types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetEnchantmentTypesCatalogAsync(CatalogEnchantmentTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Land types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetLandTypesCatalogAsync(CatalogLandTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Planeswalker types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetPlaneswalkerTypesCatalogAsync(CatalogPlaneswalkerTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all spell types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetSpellTypesCatalogAsync(CatalogSpellTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all possible values for a creature or vehicle’s power in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetPowersCatalogAsync(CatalogPowersRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all possible values for a creature or vehicle’s toughness in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetToughnessesCatalogAsync(CatalogToughnessesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all possible values for a Planeswalker’s loyalty in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetLoyaltiesCatalogAsync(CatalogLoyaltiesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all keyword abilities in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetKeywordAbilitiesCatalogAsync(CatalogKeywordAbilitiesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all keyword actions in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetKeywordActionsCatalogAsync(CatalogKeywordActionsRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all ability words in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetAbilityWordsCatalogAsync(CatalogAbilityWordsRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all flavor words in Scryfall’s database.
+        /// </summary>
+        public async Task<Catalog> GetFlavorWordsCatalogAsync(CatalogFlavorWordsRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all card watermarks in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetWatermarksCatalogAsync(CatalogWatermarksRequest request)
+            => await executeRequestAsync<Catalog>(request);
 
         private async Task<T> executeRequestAsync<T>(IRequest request)
         {
