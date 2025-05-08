@@ -358,6 +358,24 @@ namespace ScryfallClient
             => await executeRequestAsync<ObjectList<CardSymbol>>(request);
 
         /// <summary>
+        /// Returns a List of all Bulk Data items on Scryfall.
+        /// </summary>
+        public async Task<ObjectList<BulkData>> GetBulkDataAsync(BulkDataRequest request)
+            => await executeRequestAsync<ObjectList<BulkData>>(request);
+
+        /// <summary>
+        /// Returns a single Bulk Data object with the given id.
+        /// </summary>
+        public async Task<BulkData> GetBulkDataByIdAsync(BulkDataByIdRequest request)
+            => await executeRequestAsync<BulkData>(request);
+
+        /// <summary>
+        /// Returns a single Bulk Data object with the given type.
+        /// </summary>
+        public async Task<BulkData> GetBulkDataByTypeAsync(BulkDataByTypeRequest request)
+            => await executeRequestAsync<BulkData>(request);
+
+        /// <summary>
         /// Parses the given mana cost parameter and returns Scryfall’s interpretation.
         /// <br/><br/>
         /// The server understands most community shorthand for mana costs (such as 2WW for {2}{W}{W}).
