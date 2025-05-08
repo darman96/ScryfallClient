@@ -153,6 +153,238 @@ namespace ScryfallClient
         public async Task<Card> GetCardByScryfallIdAsync(CardByIdRequest request)
             => await executeRequestAsync<Card>(request);
 
+        /// <summary>
+        /// Returns a List of rulings for a card with the given Multiverse ID.
+        /// If the card has multiple multiverse IDs, this method can find either of them.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByMultiverseIdAsync(RulingsByMultiverseIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns rulings for a card with the given MTGO ID (also known as the Catalog ID).
+        /// The ID can either be the card’s mtgo_id or its mtgo_foil_id.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByMtgoIdAsync(RulingsByMtgoIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns rulings for a card with the given Magic: The Gathering Arena ID.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByArenaIdAsync(RulingsByArenaIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns a List of rulings for the card with the given set code and collector number.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByCollectorInfoAsync(RulingsByCollectorInfoRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns a List of rulings for a card with the given Scryfall ID.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByScryfallIdAsync(RulingsByScryfallIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns a list of all nontoken English card names in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetCardNamesCatalogAsync(CatalogCardNamesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a list of all canonical artist names in Scryfall’s database.
+        /// This catalog won’t include duplicate, misspelled, or funny names for artists.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetArtistNamesCatalogAsync(CatalogArtistNamesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all English words, of length 2 or more, that could appear in a card name.
+        /// Values are drawn from cards currently in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetWordBankCatalogAsync(CatalogWordBankRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Magic card supertypes.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetSupertypesCatalogAsync(CatalogSupertypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Magic card types.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetCardTypesCatalogAsync(CatalogCardTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all artifact types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetArtifactTypesCatalogAsync(CatalogArtifactTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Battle types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetBattleTypesCatalogAsync(CatalogBattleTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all creature types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetCreatureTypesCatalogAsync(CatalogCreatureTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all enchantment types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetEnchantmentTypesCatalogAsync(CatalogEnchantmentTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Land types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetLandTypesCatalogAsync(CatalogLandTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all Planeswalker types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetPlaneswalkerTypesCatalogAsync(CatalogPlaneswalkerTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all spell types in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetSpellTypesCatalogAsync(CatalogSpellTypesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all possible values for a creature or vehicle’s power in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetPowersCatalogAsync(CatalogPowersRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all possible values for a creature or vehicle’s toughness in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetToughnessesCatalogAsync(CatalogToughnessesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all possible values for a Planeswalker’s loyalty in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetLoyaltiesCatalogAsync(CatalogLoyaltiesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all keyword abilities in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetKeywordAbilitiesCatalogAsync(CatalogKeywordAbilitiesRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all keyword actions in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetKeywordActionsCatalogAsync(CatalogKeywordActionsRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all ability words in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetAbilityWordsCatalogAsync(CatalogAbilityWordsRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all flavor words in Scryfall’s database.
+        /// </summary>
+        public async Task<Catalog> GetFlavorWordsCatalogAsync(CatalogFlavorWordsRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a Catalog of all card watermarks in Scryfall’s database.
+        /// Values are updated as soon as a new card is entered for spoiler seasons.
+        /// </summary>
+        public async Task<Catalog> GetWatermarksCatalogAsync(CatalogWatermarksRequest request)
+            => await executeRequestAsync<Catalog>(request);
+
+        /// <summary>
+        /// Returns a List object of all Sets on Scryfall.
+        /// </summary>
+        public async Task<ObjectList<Set>> GetSetsAsync(SetsRequest request)
+            => await executeRequestAsync<ObjectList<Set>>(request);
+
+        /// <summary>
+        /// Returns a Set with the given set code.
+        /// The code can be either the code or the mtgo_code for the set.
+        /// </summary>
+        public async Task<Set> GetSetByCodeAsync(SetByCodeRequest request)
+            => await executeRequestAsync<Set>(request);
+
+        /// <summary>
+        /// Returns a Set with the given Scryfall id.
+        /// </summary>
+        public async Task<Set> GetSetByIdAsync(SetByIdRequest request)
+            => await executeRequestAsync<Set>(request);
+
+        /// <summary>
+        /// Returns a Set with the given tcgplayer_id, also known as the groupId on TCGplayer’s API.
+        /// </summary>
+        public async Task<Set> GetSetByTcgPlayerIdAsync(SetByTcgPlayerIdRequest request)
+            => await executeRequestAsync<Set>(request);
+
+        /// <summary>
+        /// Returns a List of all Card Symbols.
+        /// </summary>
+        public async Task<ObjectList<CardSymbol>> GetSymbologyAsync(SymbologyRequest request)
+            => await executeRequestAsync<ObjectList<CardSymbol>>(request);
+
+        /// <summary>
+        /// Returns a List of all Bulk Data items on Scryfall.
+        /// </summary>
+        public async Task<ObjectList<BulkData>> GetBulkDataAsync(BulkDataRequest request)
+            => await executeRequestAsync<ObjectList<BulkData>>(request);
+
+        /// <summary>
+        /// Returns a single Bulk Data object with the given id.
+        /// </summary>
+        public async Task<BulkData> GetBulkDataByIdAsync(BulkDataByIdRequest request)
+            => await executeRequestAsync<BulkData>(request);
+
+        /// <summary>
+        /// Returns a single Bulk Data object with the given type.
+        /// </summary>
+        public async Task<BulkData> GetBulkDataByTypeAsync(BulkDataByTypeRequest request)
+            => await executeRequestAsync<BulkData>(request);
+
+        /// <summary>
+        /// Parses the given mana cost parameter and returns Scryfall’s interpretation.
+        /// <br/><br/>
+        /// The server understands most community shorthand for mana costs (such as 2WW for {2}{W}{W}).
+        /// Symbols can also be out of order, lowercase, or have multiple colorless costs (such as 2{g}2 for {4}{G}).
+        /// <br/><br/>
+        /// If part of the string could not be understood, the server will return an Error object describing the problem.
+        /// </summary>
+        public async Task<ManaCost> GetParsedManaCostsAsync(ParseManaRequest request)
+            => await executeRequestAsync<ManaCost>(request);
 
         private async Task<T> executeRequestAsync<T>(IRequest request)
         {
