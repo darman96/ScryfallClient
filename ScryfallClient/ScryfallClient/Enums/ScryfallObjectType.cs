@@ -11,6 +11,7 @@ namespace ScryfallClient.Enums
         Catalog,
         List,
         Error,
+        BulkData
     }
     
     
