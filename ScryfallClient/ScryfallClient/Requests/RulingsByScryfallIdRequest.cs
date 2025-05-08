@@ -5,17 +5,17 @@ using ScryfallClient.Requests.Interfaces;
 namespace ScryfallClient.Requests
 {
     /// <summary>
-    /// Represents a request to retrieve a set by its Scryfall ID.
+    /// Represents a request to retrieve rulings for a card by its Scryfall ID.
     /// </summary>
-    public class SetByIdRequest : IRequest
+    public class RulingsByScryfallIdRequest : IRequest
     {
-        public string EndpointUri => "sets/<Id>";
+        public string EndpointUri => $"cards/<id>/rulings";
         public string Method => "GET";
 
         /// <summary>
-        /// The Scryfall ID of the set.
+        /// The Scryfall ID.
         /// </summary>
-        [QueryParameter("Id", IsPartOfPath = true)]
+        [QueryParameter("id", IsPartOfPath = true)]
         public Guid Id { get; set; }
 
         /// <summary>
@@ -23,12 +23,12 @@ namespace ScryfallClient.Requests
         /// </summary>
         [QueryParameter("format")]
         public string Format => "json";
-
+        
         /// <summary>
         /// If true, the returned JSON will be prettified.
         /// Avoid using for production code.
         /// </summary>
-        [QueryParameter("pretty" , DependsOn = new []{ "format=json" })]
+        [QueryParameter("pretty", DependsOn = new []{ "format=json" })]
         public bool? Pretty { get; set; }
     }
 }

@@ -154,6 +154,38 @@ namespace ScryfallClient
             => await executeRequestAsync<Card>(request);
 
         /// <summary>
+        /// Returns a List of rulings for a card with the given Multiverse ID.
+        /// If the card has multiple multiverse IDs, this method can find either of them.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByMultiverseIdAsync(RulingsByMultiverseIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns rulings for a card with the given MTGO ID (also known as the Catalog ID).
+        /// The ID can either be the card’s mtgo_id or its mtgo_foil_id.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByMtgoIdAsync(RulingsByMtgoIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns rulings for a card with the given Magic: The Gathering Arena ID.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByArenaIdAsync(RulingsByArenaIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns a List of rulings for the card with the given set code and collector number.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByCollectorInfoAsync(RulingsByCollectorInfoRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
+        /// Returns a List of rulings for a card with the given Scryfall ID.
+        /// </summary>
+        public async Task<ObjectList<Ruling>> GetRulingsByScryfallIdAsync(RulingsByScryfallIdRequest request)
+            => await executeRequestAsync<ObjectList<Ruling>>(request);
+
+        /// <summary>
         /// Returns a list of all nontoken English card names in Scryfall’s database.
         /// Values are updated as soon as a new card is entered for spoiler seasons.
         /// </summary>

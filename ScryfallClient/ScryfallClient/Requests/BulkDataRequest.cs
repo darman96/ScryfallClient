@@ -1,5 +1,4 @@
 using ScryfallClient.Attributes;
-using ScryfallClient.Enums;
 using ScryfallClient.Requests.Interfaces;
 
 namespace ScryfallClient.Requests
@@ -13,7 +12,7 @@ namespace ScryfallClient.Requests
         /// The data format to return. This method only supports json.
         /// </summary>
         [QueryParameter("format")]
-        public string? Format => "json";
+        public string Format => "json";
 
         /// <summary>
         /// If true, the returned JSON will be prettified.
