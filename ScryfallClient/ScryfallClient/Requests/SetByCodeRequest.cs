@@ -4,10 +4,19 @@ using ScryfallClient.Requests.Interfaces;
 
 namespace ScryfallClient.Requests
 {
-    public class BulkDataRequest : IRequest
+    /// <summary>
+    /// Represents a request to retrieve a set by its code.
+    /// </summary>
+    public class SetByCodeRequest : IRequest
     {
-        public string EndpointUri => "bulk-data";
+        public string EndpointUri => "sets/<Code>";
         public string Method => "GET";
+
+        /// <summary>
+        /// The three to five-letter set code.
+        /// </summary>
+        [QueryParameter("Code", IsPartOfPath = true)]
+        public string Code { get; set; } = null!;
 
         /// <summary>
         /// The data format to return. This method only supports json.
@@ -19,7 +28,7 @@ namespace ScryfallClient.Requests
         /// If true, the returned JSON will be prettified.
         /// Avoid using for production code.
         /// </summary>
-        [QueryParameter("pretty")]
+        [QueryParameter("pretty" , DependsOn = new []{ "format=json" })]
         public bool? Pretty { get; set; }
     }
 }

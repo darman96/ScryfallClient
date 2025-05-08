@@ -294,6 +294,31 @@ namespace ScryfallClient
         public async Task<Catalog> GetWatermarksCatalogAsync(CatalogWatermarksRequest request)
             => await executeRequestAsync<Catalog>(request);
 
+        /// <summary>
+        /// Returns a List object of all Sets on Scryfall.
+        /// </summary>
+        public async Task<ObjectList<Set>> GetSetsAsync(SetsRequest request)
+            => await executeRequestAsync<ObjectList<Set>>(request);
+
+        /// <summary>
+        /// Returns a Set with the given set code.
+        /// The code can be either the code or the mtgo_code for the set.
+        /// </summary>
+        public async Task<Set> GetSetByCodeAsync(SetByCodeRequest request)
+            => await executeRequestAsync<Set>(request);
+
+        /// <summary>
+        /// Returns a Set with the given Scryfall id.
+        /// </summary>
+        public async Task<Set> GetSetByIdAsync(SetByIdRequest request)
+            => await executeRequestAsync<Set>(request);
+
+        /// <summary>
+        /// Returns a Set with the given tcgplayer_id, also known as the groupId on TCGplayer’s API.
+        /// </summary>
+        public async Task<Set> GetSetByTcgPlayerIdAsync(SetByTcgPlayerIdRequest request)
+            => await executeRequestAsync<Set>(request);
+
         private async Task<T> executeRequestAsync<T>(IRequest request)
         {
             var response = request.Method switch
