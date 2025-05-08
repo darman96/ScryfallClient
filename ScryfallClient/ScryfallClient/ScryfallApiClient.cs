@@ -351,6 +351,23 @@ namespace ScryfallClient
         public async Task<Set> GetSetByTcgPlayerIdAsync(SetByTcgPlayerIdRequest request)
             => await executeRequestAsync<Set>(request);
 
+        /// <summary>
+        /// Returns a List of all Card Symbols.
+        /// </summary>
+        public async Task<ObjectList<CardSymbol>> GetSymbologyAsync(SymbologyRequest request)
+            => await executeRequestAsync<ObjectList<CardSymbol>>(request);
+
+        /// <summary>
+        /// Parses the given mana cost parameter and returns Scryfall’s interpretation.
+        /// <br/><br/>
+        /// The server understands most community shorthand for mana costs (such as 2WW for {2}{W}{W}).
+        /// Symbols can also be out of order, lowercase, or have multiple colorless costs (such as 2{g}2 for {4}{G}).
+        /// <br/><br/>
+        /// If part of the string could not be understood, the server will return an Error object describing the problem.
+        /// </summary>
+        public async Task<ManaCost> GetParsedManaCostsAsync(ParseManaRequest request)
+            => await executeRequestAsync<ManaCost>(request);
+
         private async Task<T> executeRequestAsync<T>(IRequest request)
         {
             var response = request.Method switch
